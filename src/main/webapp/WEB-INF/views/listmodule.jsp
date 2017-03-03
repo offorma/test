@@ -1,0 +1,97 @@
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Module Listings</title>
+<link href="<c:url value = "/resources/css/bootstrap.min.css"/>"
+	rel="stylesheet" />
+
+<link href="<c:url value = "/resources/font/css/font-awesome.min.css"/>"
+	rel="stylesheet" />
+	<link href="<c:url value = "https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css"/>"
+	rel="stylesheet" />
+<link href="<c:url value = "/resources/css/style.css"/>"
+	rel="stylesheet" />
+<script src="<c:url value ="/resources/js/bootstrap.min.js"/>">
+	
+</script>
+<script src="<c:url value ="/resources/js/jquery-3.1.1.min.js"/>">
+	
+</script>
+<script src="<c:url value ="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"/>">
+	
+</script>
+<script src="<c:url value ="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"/>">
+	
+</script>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row landing">
+			<div class="col-md-8 col-md-offset-2">
+				<table id ="listrooms" class="table table-condensed table-striped">
+					<thead>
+						<tr>
+							<th class="">Module Code</th>
+							<th class="">Module Name</th>
+							<th class=""></th>
+							<th class=""></th>
+							
+						</tr>
+					</thead>
+					<tr>
+						<td class="">Cmm001</td>
+						<td class="">Introduction to Object Oriented Programming</td>
+						<td class=""><button class="btn btn-success">edit</button></td>
+						<td class=""><button class="btn btn-danger">delete</button></td>
+					</tr>
+						<tr>
+						<td class="">Cmm005</td>
+						<td class="">Advanced Object Oriented Programming</td>
+						<td class=""><button class="btn btn-success">edit</button></td>
+						<td class=""><button class="btn btn-danger">delete</button></td>
+					</tr>
+						<tr>
+						<td class="">Cmm002</td>
+						<td class="">Intranet Systems Development</td>
+						<td class=""><button class="btn btn-success">edit</button></td>
+						<td class=""><button class="btn btn-danger">delete</button></td>
+					</tr>
+					<tr>
+						<td class="">Cmm008</td>
+						<td class="">Data Management System</td>
+						<td class=""><button class="btn btn-success">edit</button></td>
+						<td class=""><button class="btn btn-danger">delete</button></td>
+					</tr>
+						<tr>
+						<td class="">Cmm007</td>
+						<td class="">IT Service Management</td>
+						<td class=""><button class="btn btn-success">edit</button></td>
+						<td class=""><button class="btn btn-danger">delete</button></td>
+					</tr>
+						<tr>
+						<td class="">Cmm009</td>
+						<td class="">Cisco Network Security</td>
+						<td class=""><button class="btn btn-success">edit</button></td>
+						<td class=""><button class="btn btn-danger">delete</button></td>
+					</tr>
+					
+				</table>
+			</div>
+
+		</div>
+
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#listrooms').DataTable();
+	} );
+	</script>
+</body>
+</html>
