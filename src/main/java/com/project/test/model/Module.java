@@ -4,22 +4,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Module {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long moduleId;
+	private long id;
 	
-	public long getModuleId() {
-		return moduleId;
-	}
-	public void setModuleId(long moduleId) {
-		this.moduleId = moduleId;
-	}
+	@OneToOne (mappedBy = "module")
+	private Event event;
 	private String moduleCode;
 	private String moduleName;
 	private int totalWeeklyHour;
+	
+
+	public long getModuleId() {
+		return id;
+	}
+	public void setModuleId(long id) {
+		this.id = id;
+	}
 	public String getModuleCode() {
 		return moduleCode;
 	}

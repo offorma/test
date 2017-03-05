@@ -39,9 +39,9 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/mscproject_data");
+        dataSource.setUrl("jdbc:mysql://localhost:8889/project");
         dataSource.setUsername("root");
-        dataSource.setPassword(null);
+        dataSource.setPassword("root");
         return dataSource;
     }
 	 private Properties getHibernateProperties() {
@@ -49,7 +49,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
 	        properties.put("hibernate.show_sql", "true");
 	        properties.put("hibernate.dialect",
 	                "org.hibernate.dialect.MySQLDialect");
-	        properties.put("hibernate.hbm2ddl.auto", "update");
+	        properties.put("hibernate.hbm2ddl.auto", "create");
 	        return properties;
 	    }
 

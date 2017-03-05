@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
 public class StudentGroup {
 	@Id
@@ -11,6 +12,7 @@ public class StudentGroup {
 	private long groupId;
 	private String groupName;
 	private int numberOfStudent;
+	
 	
 	public String getGroupName() {
 		return groupName;

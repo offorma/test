@@ -3,35 +3,51 @@ package com.project.test.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
 @Entity
 public class Event {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long eventId;
+	private long id;
+	
+	
 	private Date date;
+	
+	
 	private Date startTime;
+	
+	
 	private Date endTime;
+	
+
 	@OneToOne
 	private Room room;
+	
+	
 	@OneToOne
 	private Module module;
-	@OneToMany
+	
+	@Column(name = "TUTOR", nullable = false)
+	@ManyToMany
 	private List<Tutor> tutor;
-	@OneToMany
+	
+	@Column(name = "STUDENT_GROUP", nullable = false)
+
+	@ManyToMany
 	private List<StudentGroup> studentGroup;
 	
-	public long getEventId() {
-		return eventId;
+	public long getId() {
+		return id;
 	}
-	public void setEventId(long eventId) {
-		this.eventId = eventId;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public Date getDate() {
 		return date;

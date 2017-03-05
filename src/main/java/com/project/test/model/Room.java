@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Room {
@@ -15,6 +16,14 @@ public class Room {
 	private int capacity;
 	private String building;
 	private String type;
+	@OneToOne (mappedBy = "room")
+	private Event event;
+	public Event getEvent() {
+		return event;
+	}
+	public void setEvent(Event event) {
+		this.event = event;
+	}
 	public long getId() {
 		return id;
 	}
