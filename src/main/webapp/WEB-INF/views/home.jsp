@@ -27,7 +27,13 @@
 	<div class="container">
 		<div class="row landing">
 			<div class="col-md-4 col-md-offset-2">
-				<form>
+				<c:choose>
+				    <c:when test="${message.length()!=0}">
+				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
+				    </c:when>
+			   </c:choose>
+			
+				<form method="post" action="login">
 					<div class="form-group">
 						<label for="Username">Username</label> <input
 							type="text" class="form-control" name="Username" id= "Username"></input>
@@ -37,6 +43,8 @@
 							type="text" class="form-control" name="Password" id="Password"></input>
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
+					<a href="<c:url value="/signup"/>">
+					<button type="button" class="btn btn-default">Sign Up</button></a>
 				</form>
 			</div>
 		</div>
