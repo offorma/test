@@ -17,11 +17,11 @@
 		<div class="row landing">
 		<div class="col-md-4 col-md-offset-2">
 		<img id="settings-img"class="center-block img-respinsive" src="<c:url value = "/resources/img/settings.png"/>" alt="" />
-		<p class ="landing-para">Basic Settings</p>
+		<a href="<c:url value="/basic"/>" class ="landing-para">Basic Settings</a>
 		</div>
 		<div class="col-md-4">
 		<img id= "schedule-img" class="center-block img-respinsive"  src="<c:url value = "/resources/img/schedule.png"/>" alt="" />
-		<p class ="landing-para">Schedule Events</p>
+		<a href="<c:url value="/event"/>"class ="landing-para">Schedule Events</a>
 		</div>
 		</div>
   

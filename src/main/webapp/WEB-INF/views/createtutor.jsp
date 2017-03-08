@@ -27,7 +27,12 @@
 	<div class="container">
 		<div class="row landing">
 			<div class="col-md-4 col-md-offset-2">
-				<form>
+			<c:choose>
+				    <c:when test="${message.length()!=0}">
+				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
+				    </c:when>
+			   </c:choose>
+				<form action="createtutor" method="post">
 					<div class="form-group">
 						<label for="Staffid">Staff Identity</label> <input
 							type="text" class="form-control" name="Staffid" id= "Staffid"></input>

@@ -15,8 +15,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-
-	
+	@RequestMapping(value="/student")
+	public ModelAndView student(HttpServletResponse response) throws IOException{
+		return new ModelAndView("student");
+	}
 	@RequestMapping(value="/landing")
 	public ModelAndView landing(HttpServletResponse response) throws IOException{
 		return new ModelAndView("landing");
@@ -41,10 +43,7 @@ public class HomeController {
 	public ModelAndView tutor(HttpServletResponse response) throws IOException{
 		return new ModelAndView("rooms");
 	}
-	@RequestMapping(value="/createtutor")
-	public ModelAndView addtutor(HttpServletResponse response) throws IOException{
-		return new ModelAndView("createtutor");
-	}
+	
 	@RequestMapping(value="/listtutor")
 	public ModelAndView listtutor(HttpServletResponse response) throws IOException{
 		return new ModelAndView("listtutor");
@@ -61,14 +60,8 @@ public class HomeController {
 	public ModelAndView listmodule(HttpServletResponse response) throws IOException{
 		return new ModelAndView("listmodule");
 	}
-	@RequestMapping(value="/student")
-	public ModelAndView student(HttpServletResponse response) throws IOException{
-		return new ModelAndView("student");
-	}
-	@RequestMapping(value="/createstudent")
-	public ModelAndView createstudent(HttpServletResponse response) throws IOException{
-		return new ModelAndView("createstudent");
-	}
+	
+
 	@RequestMapping(value="/liststudent")
 	public ModelAndView liststudent(HttpServletResponse response) throws IOException{
 		return new ModelAndView("liststudent");
