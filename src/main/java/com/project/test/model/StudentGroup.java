@@ -23,6 +23,12 @@ public class StudentGroup {
 	public int getNumberOfStudent() {
 		return numberOfStudent;
 	}
+	public long getGroupId() {
+		return groupId;
+	}
+	public void setGroupId(long groupId) {
+		this.groupId = groupId;
+	}
 	public void setNumberOfStudent(int numberOfStudent) {
 		this.numberOfStudent = numberOfStudent;
 	}

@@ -7,28 +7,34 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
+	
 	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long userId;
+	private String Username;
+	private String Password;
+	
 	public long getUserId() {
 		return userId;
 	}
 	public void setUserId(long userId) {
 		this.userId = userId;
 	}
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return Username;
 	}
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.Username = userName;
 	}
 	public String getPassword() {
-		return password;
+		return Password;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.Password = password;
 	}
-	private String userName;
-	private String password;
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", Username=" + Username + ", Password=" + Password + "]";
+	}
 
 }

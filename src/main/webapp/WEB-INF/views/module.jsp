@@ -28,11 +28,11 @@
 		<div class="row landing">
 			<div class="col-md-4 col-md-offset-2">
 				<i class="fa fa-plus-square-o fabasic center-block img-respinsive"></i>
-				<p class="landing-para">Create Modules</p>
+				<a href="<c:url value="/createmodule"/>" class ="landing-para center-block">Create Modules</a>
 			</div>
 			<div class="col-md-4">
 				<i class="fa fa-list fabasic center-block img-respinsive"></i>
-				<p class="landing-para">List Modules</p>
+				<a href="<c:url value="/listmodule"/>" class ="landing-para center-block">List Modules</a>
 			</div>
 			
 		</div>

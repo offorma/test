@@ -45,43 +45,18 @@
 							
 						</tr>
 					</thead>
-					<tr>
-						<td class="">INS Sept2016</td>
-						<td class="">40</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">CSTNM Sept 2016</td>
-						<td class="">10</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">CSTNM Jan 2017</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					<tr>
-						<td class="">INS Jan 2016</td>
-						<td class="">40</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">CSTNM Jan 2016</td>
-						<td class="">10</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">CSTNM Sept 2017</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					
+					<c:if test="${student.size() > 0}">
+						<c:forEach  items="${student}" var="studentValue">
+							<tr>
+								<td class="">${studentValue.getGroupName()}</td>
+								<td class="">${studentValue.getNumberOfStudent()}</td>
+								
+								
+								<td class=""><a href="<c:url value="/editstudent/${studentValue.getGroupId()}"/>"><button class="btn btn-success">edit</button></a></td>
+								<td class=""><a href="<c:url value="/deletestudent/${studentValue.getGroupId()}"/>"><button class="btn btn-danger">delete</button></a></td>
+							</tr>
+						</c:forEach>
+					</c:if>
 				</table>
 			</div>
 

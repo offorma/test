@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
-
+	
 	@RequestMapping(value="/student")
 	public ModelAndView student(HttpServletResponse response) throws IOException{
 		return new ModelAndView("student");
@@ -27,27 +27,21 @@ public class HomeController {
 	public ModelAndView basic(HttpServletResponse response) throws IOException{
 		return new ModelAndView("basicsettings");
 	}
-	@RequestMapping(value="/rooms")
+	@RequestMapping(value="/room")
 	public ModelAndView room(HttpServletResponse response) throws IOException{
-		return new ModelAndView("rooms");
+		return new ModelAndView("room");
 	}
 	@RequestMapping(value="/createroom")
 	public ModelAndView addroom(HttpServletResponse response) throws IOException{
 		return new ModelAndView("createroom");
 	}
-	@RequestMapping(value="/listrooms")
-	public ModelAndView listroom(HttpServletResponse response) throws IOException{
-		return new ModelAndView("listrooms");
-	}
+	
 	@RequestMapping(value="/tutor")
 	public ModelAndView tutor(HttpServletResponse response) throws IOException{
-		return new ModelAndView("rooms");
+		return new ModelAndView("tutor");
 	}
 	
-	@RequestMapping(value="/listtutor")
-	public ModelAndView listtutor(HttpServletResponse response) throws IOException{
-		return new ModelAndView("listtutor");
-	}
+	
 	@RequestMapping(value="/module")
 	public ModelAndView module(HttpServletResponse response) throws IOException{
 		return new ModelAndView("module");
@@ -56,15 +50,7 @@ public class HomeController {
 	public ModelAndView createmodule(HttpServletResponse response) throws IOException{
 		return new ModelAndView("createmodule");
 	}
-	@RequestMapping(value="/listmodule")
-	public ModelAndView listmodule(HttpServletResponse response) throws IOException{
-		return new ModelAndView("listmodule");
-	}
 	
 
-	@RequestMapping(value="/liststudent")
-	public ModelAndView liststudent(HttpServletResponse response) throws IOException{
-		return new ModelAndView("liststudent");
-	}
 	
 }

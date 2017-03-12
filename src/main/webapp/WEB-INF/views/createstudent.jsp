@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Add Student Group</title>
+<title>Create Student Group</title>
 <link href="<c:url value = "/resources/css/bootstrap.min.css"/>"
 	rel="stylesheet" />
 
@@ -26,7 +26,7 @@
 
 	<div class="container">
 		<div class="row landing">
-			<div class="col-md-4 col-md-offset-2">
+			<div class="col-md-6 col-md-offset-3">
 			<c:choose>
 				    <c:when test="${message.length()!=0}">
 				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>

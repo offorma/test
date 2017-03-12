@@ -26,8 +26,13 @@
 
 	<div class="container">
 		<div class="row landing">
-			<div class="col-md-4 col-md-offset-2">
-				<form>
+			<div class="col-md-6 col-md-offset-3">
+			<c:choose>
+				    <c:when test="${message.length()!=0}">
+				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
+				    </c:when>
+			   </c:choose>
+				<form method ="post" action="createmodule">
 					<div class="form-group">
 						<label for="Modulecode">Module Code</label> <input
 							type="text" class="form-control" name="Modulecode" id= "Modulecode"></input>

@@ -41,115 +41,24 @@
 							<th class="">Room Number</th>
 							<th class="">Building</th>
 							<th class="">Capacity</th>
+							<th class="">Type</th>
 							<th class=""></th>
 							<th ></th>
 						</tr>
 					</thead>
-					<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">N527</td>
-						<td class="">SIWB</td>
-						<td class="">30</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
+					<c:if test="${room.size() > 0}">
+						<c:forEach  items="${room}" var="roomValue">
+							<tr>
+								<td class="">${roomValue.getRoomNumber()}</td>
+								<td class="">${roomValue.getBuilding()}</td>
+								<td class="">${roomValue.getCapacity()}</td>
+								<td class="">${roomValue.getType()}</td>
+								
+								<td class=""><a href="<c:url value="/editroom/${roomValue.getId()}"/>"><button class="btn btn-success">edit</button></a></td>
+								<td class=""><a href="<c:url value="/deleteroom/${roomValue.getId()}"/>"><button class="btn btn-danger">delete</button></a></td>
+							</tr>
+						</c:forEach>
+					</c:if>
 				</table>
 			</div>
 

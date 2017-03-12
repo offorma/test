@@ -28,19 +28,19 @@
 		<div class="row landing">
 			<div class="col-md-3">
 				<i class="fa fa-university fabasic center-block img-respinsive"></i>
-				<p class="landing-para">Manage Rooms</p>
+				<a href="<c:url value="/room"/>" class ="landing-para center-block">Manage Rooms</a>
 			</div>
 			<div class="col-md-3">
 				<i class="fa fa-user fabasic center-block img-respinsive"></i>
-				<p class="landing-para">Manage Tutors</p>
+				<a href="<c:url value="/tutor"/>" class ="landing-para center-block">Manage Tutors</a>
 			</div>
 			<div class="col-md-3">
 				<i class="fa fa-book fabasic center-block img-respinsive"></i>
-				<p class="landing-para">Manage Modules</p>
+				<a href="<c:url value="/module"/>" class ="landing-para center-block">Manage Modules</a>
 			</div>
 			<div class="col-md-3">
 				<i class="fa fa-users fabasic center-block img-respinsive"></i>
-				<p class="landing-para">Manage Student Groups</p>
+				<a href="<c:url value="/student"/>" class ="landing-para center-block">Manage Student Groups</a>
 			</div>
 		</div>
 

@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Add Rooms</title>
+<title>Create Rooms</title>
 <link href="<c:url value = "/resources/css/bootstrap.min.css"/>"
 	rel="stylesheet" />
 
@@ -26,8 +26,13 @@
 
 	<div class="container">
 		<div class="row landing">
-			<div class="col-md-4 col-md-offset-2">
-				<form>
+			<div class="col-md-6 col-md-offset-3">
+			<c:choose>
+				    <c:when test="${message.length()!=0}">
+				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
+				    </c:when>
+			   </c:choose>
+				<form method="post" action="createroom">
 					<div class="form-group">
 						<label for="RoomNumber">Room Number</label> <input
 							type="text" class="form-control" name="RoomNumber" id= "RoomNumber"></input>
@@ -40,10 +45,10 @@
 						<label for="Building">Building</label> <input
 							type="text" class="form-control" name="Building" id="Building"></input>
 					</div>
-					<div class="checkbox">
-						<label> <input type="checkbox"></input> Lecture </label>
-						<label> <input type="checkbox"></input> Labs </label>
-						<label> <input type="checkbox"></input> Both </label>
+					<div class="radio">
+						<label> <input type="radio" name="type" value="Lecture" checked="checked"></input> Lecture </label>
+						<label> <input type="radio" name="type" value="Labs"></input> Labs </label>
+						<label> <input type="radio" name="type" value="Both"></input> Both </label>
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
 				</form>

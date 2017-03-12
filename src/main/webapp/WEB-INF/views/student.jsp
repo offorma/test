@@ -28,11 +28,11 @@
 		<div class="row landing">
 			<div class="col-md-4 col-md-offset-2">
 				<i class="fa fa-plus-square-o fabasic center-block img-respinsive"></i>
-				<p class="landing-para">Create Student Group</p>
+				<a href="<c:url value="/createstudent"/>" class ="landing-para center-block">Create Student Group</a>
 			</div>
 			<div class="col-md-4">
 				<i class="fa fa-list fabasic center-block img-respinsive"></i>
-				<p class="landing-para">List Groups</p>
+				<a href="<c:url value="/liststudent"/>" class ="landing-para center-block">List Groups</a>
 			</div>
 			
 		</div>

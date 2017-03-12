@@ -28,11 +28,11 @@
 		<div class="row landing">
 			<div class="col-md-4 col-md-offset-2">
 				<i class="fa fa-plus-square-o fabasic center-block img-respinsive"></i>
-				<p class="landing-para">Create Rooms</p>
+				<a href="<c:url value="/createroom"/>" class ="landing-para center-block">Create Room</a>
 			</div>
 			<div class="col-md-4">
 				<i class="fa fa-list fabasic center-block img-respinsive"></i>
-				<p class="landing-para">List Rooms</p>
+				<a href="<c:url value="/listroom"/>" class ="landing-para center-block">List Rooms</a>
 			</div>
 			
 		</div>

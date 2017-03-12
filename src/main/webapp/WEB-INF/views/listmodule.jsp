@@ -40,48 +40,23 @@
 						<tr>
 							<th class="">Module Code</th>
 							<th class="">Module Name</th>
+							<th class="">Total Weekly Hours</th>
 							<th class=""></th>
 							<th class=""></th>
 							
 						</tr>
 					</thead>
-					<tr>
-						<td class="">Cmm001</td>
-						<td class="">Introduction to Object Oriented Programming</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">Cmm005</td>
-						<td class="">Advanced Object Oriented Programming</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">Cmm002</td>
-						<td class="">Intranet Systems Development</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					<tr>
-						<td class="">Cmm008</td>
-						<td class="">Data Management System</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">Cmm007</td>
-						<td class="">IT Service Management</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">Cmm009</td>
-						<td class="">Cisco Network Security</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					
+					<c:if test="${module.size() > 0}">
+						<c:forEach  items="${module}" var="moduleValue">
+							<tr>
+								<td class="">${moduleValue.getModuleCode()}</td>
+								<td class="">${moduleValue.getModuleName()}</td>
+								<td class="">${moduleValue.getTotalWeeklyHour()}</td>
+								<td class=""><a href="<c:url value="/editmodule/${moduleValue.getModuleId()}"/>"><button class="btn btn-success">edit</button></a></td>
+								<td class=""><a href="<c:url value="/deletemodule/${moduleValue.getModuleId()}"/>"><button class="btn btn-danger">delete</button></a></td>
+							</tr>
+						</c:forEach>
+					</c:if>
 				</table>
 			</div>
 
