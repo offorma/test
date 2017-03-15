@@ -3,7 +3,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -28,8 +28,13 @@
 		<div class="row landing">
 			<div class="col-md-6 col-md-offset-3">
 			<c:choose>
-				    <c:when test="${message.length()!=0}">
+				    <c:when test="${message.length()>0}">
 				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
+				    </c:when>
+			   </c:choose>
+			   <c:choose>
+				    <c:when test='${messages.length()>0}'>
+				    		<div class='alert alert-success'><span class=''>${messages}</span> </div>
 				    </c:when>
 			   </c:choose>
 				<form method="post" action="createroom">

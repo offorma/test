@@ -13,11 +13,17 @@ public class Tutor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long Id;
+	
 	private String staffID;
 	private String name;
 	private String department;
 	
-	
+	public long getId() {
+		return Id;
+	}
+	public void setId(long id) {
+		Id = id;
+	}
 	public String getStaffID() {
 		return staffID;
 	}

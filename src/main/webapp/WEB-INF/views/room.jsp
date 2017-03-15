@@ -3,7 +3,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -32,7 +32,7 @@
 			</div>
 			<div class="col-md-4">
 				<i class="fa fa-list fabasic center-block img-respinsive"></i>
-				<a href="<c:url value="/listroom"/>" class ="landing-para center-block">List Rooms</a>
+				<a href="<c:url value="/listrooms"/>" class ="landing-para center-block">List Rooms</a>
 			</div>
 			
 		</div>

@@ -1,9 +1,7 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <?xml version="1.0" encoding="UTF-8" ?>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -35,6 +33,16 @@
 	<div class="container">
 		<div class="row landing">
 			<div class="col-md-8 col-md-offset-2">
+			<c:choose>
+				    <c:when test="${message.length()>0}">
+				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
+				    </c:when>
+			   </c:choose>
+			   <c:choose>
+				    <c:when test='${messages.length()>0}'>
+				    		<div class='alert alert-success'><span class=''>${messages}</span> </div>
+				    </c:when>
+			   </c:choose>
 				<table id ="listrooms" class="table table-condensed table-striped">
 					<thead>
 						<tr>
@@ -45,43 +53,18 @@
 							
 						</tr>
 					</thead>
-					<tr>
-						<td class="">John Smith</td>
-						<td class="">computing</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">Sheldon Cooper</td>
-						<td class="">Engineering</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">Richard Branson</td>
-						<td class="">ABS</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					<tr>
-						<td class="">Mike Peterson</td>
-						<td class="">Computing</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">Jill Green</td>
-						<td class="">Enginnering</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-						<tr>
-						<td class="">Robert Scholes</td>
-						<td class="">pharmacy</td>
-						<td class=""><button class="btn btn-success">edit</button></td>
-						<td class=""><button class="btn btn-danger">delete</button></td>
-					</tr>
-					
+						<c:if test="${tutor.size() > 0}">
+						<c:forEach  items="${tutor}" var="tutorValue">
+							<tr>
+								<td class="">${tutorValue.getName()}</td>
+								<td class="">${tutorValue.getDepartment()}</td>
+								
+								
+								<td class=""><a href="<c:url value="/edittutor/${tutorValue.getId()}"/>"><button class="btn btn-success">edit</button></a></td>
+								<td class=""><a href="<c:url value="/deletetutor/${tutorValue.getId()}"/>"><button class="btn btn-danger">delete</button></a></td>
+							</tr>
+						</c:forEach>
+					</c:if>
 				</table>
 			</div>
 
