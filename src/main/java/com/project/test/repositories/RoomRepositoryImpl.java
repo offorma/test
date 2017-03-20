@@ -12,8 +12,6 @@ import org.springframework.stereotype.Repository;
 
 import com.project.test.model.Room;
 
-
-
 @Repository("roomRepository")
 public class RoomRepositoryImpl implements RoomRepository {
 

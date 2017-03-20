@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -40,15 +39,15 @@
 				<form method="post" action="createroom">
 					<div class="form-group">
 						<label for="RoomNumber">Room Number</label> <input
-							type="text" class="form-control" name="RoomNumber" id= "RoomNumber"></input>
+							type="text" class="form-control" name="RoomNumber" id= "RoomNumber" placeholder="Room Number"></input>
 					</div>
 					<div class="form-group">
 						<label for="Capacity">Capacity</label> <input
-							type="text" class="form-control" name="Capacity" id="Capacity"></input>
+							type="text" class="form-control" name="Capacity" id="Capacity" placeholder="Capacity"></input>
 					</div>
 					<div class="form-group">
 						<label for="Building">Building</label> <input
-							type="text" class="form-control" name="Building" id="Building"></input>
+							type="text" class="form-control" name="Building" id="Building" placeholder="Building"></input>
 					</div>
 					<div class="radio">
 						<label> <input type="radio" name="type" value="Lecture" checked="checked"></input> Lecture </label>

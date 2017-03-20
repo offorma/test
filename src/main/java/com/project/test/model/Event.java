@@ -1,14 +1,19 @@
 package com.project.test.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -16,31 +21,24 @@ public class Event {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
-	
-	private Date date;
-	
-	
-	private Date startTime;
-	
-	
-	private Date endTime;
-	
-
-	@OneToOne
+	private LocalDate date;
+	private LocalTime startTime;
+	private LocalTime endTime;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "room_id")
 	private Room room;
 	
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private Module module;
 	
 	@Column(name = "TUTOR", nullable = false)
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<Tutor> tutor;
 	
 	@Column(name = "STUDENT_GROUP", nullable = false)
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<StudentGroup> studentGroup;
 	
 	public long getId() {
@@ -49,30 +47,25 @@ public class Event {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public Date getStartTime() {
+	public LocalTime getStartTime() {
 		return startTime;
 	}
-	public void setStartTime(Date startTime) {
+	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
 	}
-	public Date getEndTime() {
+	public LocalTime getEndTime() {
 		return endTime;
 	}
-	public void setEndTime(Date endTime) {
+	public void setEndTime(LocalTime endTime) {
 		this.endTime = endTime;
 	}
-	public Room getRoom() {
-		return room;
-	}
-	public void setRoom(Room room) {
-		this.room = room;
-	}
+
 	public Module getModule() {
 		return module;
 	}
@@ -81,6 +74,12 @@ public class Event {
 	}
 	public List<Tutor> getTutor() {
 		return tutor;
+	}
+	public Room getRoom() {
+		return room;
+	}
+	public void setRoom(Room room) {
+		this.room = room;
 	}
 	public void setTutor(List<Tutor> tutor) {
 		this.tutor = tutor;

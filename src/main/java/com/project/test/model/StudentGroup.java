@@ -1,5 +1,6 @@
 package com.project.test.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class StudentGroup {
 	public String getGroupName() {
 		return groupName;
 	}
+	 @Column(unique = true, nullable = false, length = 10)
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}

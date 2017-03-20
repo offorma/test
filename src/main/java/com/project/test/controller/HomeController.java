@@ -1,15 +1,12 @@
 package com.project.test.controller;
 
 import java.io.IOException;
-
-
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.servlet.ModelAndView;
-
 
 
 @Controller
@@ -45,6 +42,10 @@ public class HomeController {
 	@RequestMapping(value="/module")
 	public ModelAndView module(HttpServletResponse response) throws IOException{
 		return new ModelAndView("module");
+	}
+	@RequestMapping(value="/event")
+	public ModelAndView event(HttpServletResponse response) throws IOException{
+		return new ModelAndView("event");
 	}
 	@RequestMapping(value="/createmodule")
 	public ModelAndView createmodule(HttpServletResponse response) throws IOException{

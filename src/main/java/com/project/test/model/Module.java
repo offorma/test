@@ -1,5 +1,6 @@
 package com.project.test.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,7 @@ public class Module {
 	public void setModuleId(long id) {
 		this.id = id;
 	}
+	 @Column(unique = true, nullable = false, length = 10)
 	public String getModuleCode() {
 		return moduleCode;
 	}

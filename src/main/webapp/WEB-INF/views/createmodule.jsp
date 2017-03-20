@@ -28,8 +28,13 @@
 		<div class="row landing">
 			<div class="col-md-6 col-md-offset-3">
 			<c:choose>
-				    <c:when test="${message.length()!=0}">
+				    <c:when test="${message.length()>0}">
 				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
+				    </c:when>
+			   </c:choose>
+			   <c:choose>
+				    <c:when test='${messages.length()>0}'>
+				    		<div class='alert alert-success'><span class=''>${messages}</span> </div>
 				    </c:when>
 			   </c:choose>
 				<form method ="post" action="createmodule">

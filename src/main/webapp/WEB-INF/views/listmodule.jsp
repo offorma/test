@@ -33,6 +33,16 @@
 	<div class="container">
 		<div class="row landing">
 			<div class="col-md-8 col-md-offset-2">
+			<c:choose>
+				    <c:when test="${message.length()>0}">
+				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
+				    </c:when>
+			   </c:choose>
+			   <c:choose>
+				    <c:when test='${messages.length()>0}'>
+				    		<div class='alert alert-success'><span class=''>${messages}</span> </div>
+				    </c:when>
+			   </c:choose>
 				<table id ="listrooms" class="table table-condensed table-striped">
 					<thead>
 						<tr>
