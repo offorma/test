@@ -11,17 +11,20 @@ public class StudentGroup {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long groupId;
+	 @Column(unique = true, nullable = false)
 	private String groupName;
+	 @Column(nullable=false)
 	private int numberOfStudent;
 	
 	
 	public String getGroupName() {
 		return groupName;
 	}
-	 @Column(unique = true, nullable = false, length = 10)
+	
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}
+	
 	public int getNumberOfStudent() {
 		return numberOfStudent;
 	}

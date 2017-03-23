@@ -17,9 +17,13 @@ public class Room {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
     private long id;
+	@Column(unique = true, nullable = false)
 	private String roomNumber;
+	@Column(nullable=false)
 	private int capacity;
+	@Column(nullable=false)
 	private String building;
+	@Column(nullable=false)
 	private String type;
 	@OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
 	private List<Event> event;
@@ -41,25 +45,28 @@ public class Room {
 		this.id = id;
 	}
 
-    @Column(unique = true, nullable = false, length = 10)
+    
 	public String getRoomNumber() {
 		return roomNumber;
 	}
 	public void setRoomNumber(String roomNumber) {
 		this.roomNumber = roomNumber;
 	}
+	
 	public int getCapacity() {
 		return capacity;
 	}
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
+
 	public String getBuilding() {
 		return building;
 	}
 	public void setBuilding(String building) {
 		this.building = building;
 	}
+	
 	public String getType() {
 		return type;
 	}

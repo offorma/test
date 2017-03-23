@@ -136,11 +136,10 @@ public class RoomRepositoryImpl implements RoomRepository {
 		    }
 		    return null;  
 		  }
-	catch(Exception e){
-		tx.rollback();
-   		session.close();
-   		e.printStackTrace();
-		
+		catch(Exception e){
+			tx.rollback();
+	   		session.close();
+	   		e.printStackTrace();
 			    }
 	return null;
 	}
