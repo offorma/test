@@ -13,7 +13,7 @@ public class StudentGroup {
 	private long groupId;
 	 @Column(unique = true, nullable = false)
 	private String groupName;
-	 @Column(nullable=false)
+	 @Column( nullable = false)
 	private int numberOfStudent;
 	
 	

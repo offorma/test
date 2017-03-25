@@ -1,5 +1,6 @@
 package com.project.test.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 
 @Entity
@@ -35,9 +39,11 @@ public class Event {
 	private Module module;
 	@ManyToMany
 	@Column( nullable = false)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Tutor> tutor;
 	@ManyToMany
 	@Column( nullable = false)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<StudentGroup> studentGroup;
 	
 	public long getId() {
@@ -73,27 +79,25 @@ public class Event {
 	}
 	public void setModule(Module module) {
 		this.module = module;
-	}
-	
-	public List<Tutor> getTutor() {
-		return tutor;
-	}
-	
+	}	
 	public Room getRoom() {
 		return room;
 	}
 	public void setRoom(Room room) {
 		this.room = room;
 	}
-	public void setTutor(List<Tutor> tutor) {
+	public List<Tutor> getTutor() {
+		return tutor;
+	}
+	public void setTutor(ArrayList<Tutor> tutor) {
 		this.tutor = tutor;
 	}
-	
 	public List<StudentGroup> getStudentGroup() {
 		return studentGroup;
 	}
-	public void setStudentGroup(List<StudentGroup> studentGroup) {
+	public void setStudentGroup(ArrayList<StudentGroup> studentGroup) {
 		this.studentGroup = studentGroup;
 	}
+	
 	
 }

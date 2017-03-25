@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 
 @Entity
 public class Room {
@@ -26,6 +29,7 @@ public class Room {
 	@Column(nullable=false)
 	private String type;
 	@OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Event> event;
 	
 	public List<Event> getEvent() {

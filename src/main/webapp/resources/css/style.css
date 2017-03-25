@@ -7,7 +7,7 @@
 	width:30%;
 }
 .landing{
-	margin-top: 20%;
+	margin-top: 10%;
 }
 .landing-para{
 	text-align:center;
@@ -17,4 +17,13 @@
 	display:block;
 	text-align:center;
 	
+}
+.carousel{
+    background: #2f4357;
+}
+.errordiv p{
+	color:#fff;
+}
+.carousel .item .errordiv{
+    margin: 0 auto; /* Align slide image horizontally center */
 }
