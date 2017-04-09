@@ -67,13 +67,16 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<c:url value="/createevent"/>">Schedule Event</a></li>
-          <li><a href="<c:url value="/liststudent"/>">View Events</a></li>
+          <li><a href="<c:url value="/searchevent"/>">Search Events</a></li>
         </ul>
       </li>
     </ul>
+     <ul class="nav navbar-nav pull-right" >
+                <li><a href="<c:url value="/logout"/>" class="pull-right">Logout</a></li>
+            </ul>
   </div>
 </nav>
-
+<H1 class="title">Create Tutors</H1>
 	<div class="container">
 		<div class="row landing">
 			<div class="col-md-6 col-md-offset-3">

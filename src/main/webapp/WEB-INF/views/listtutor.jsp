@@ -68,13 +68,16 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<c:url value="/createevent"/>">Schedule Event</a></li>
-          <li><a href="<c:url value="/liststudent"/>">View Events</a></li>
+          <li><a href="<c:url value="/searchevent"/>">Search Events</a></li>
         </ul>
       </li>
     </ul>
+     <ul class="nav navbar-nav pull-right" >
+                <li><a href="<c:url value="/logout"/>" class="pull-right">Logout</a></li>
+            </ul>
   </div>
 </nav>
-
+<H1 class="title">Tutor Listings</H1>
 	<div class="container">
 		<div class="row landing">
 			<div class="col-md-8 col-md-offset-2">
@@ -103,10 +106,10 @@
 							<tr>
 								<td class="">${tutorValue.getName()}</td>
 								<td class="">${tutorValue.getDepartment()}</td>
-								
-								
-								<td class=""><a href="<c:url value="/edittutor/${tutorValue.getId()}"/>"><button class="btn btn-success">edit</button></a></td>
-								<td class=""><a href="<c:url value="/deletetutor/${tutorValue.getId()}"/>"><button class="btn btn-danger">delete</button></a></td>
+
+								<td class=""><a href="<c:url  value="/edittutor/${tutorValue.getId()}"/>"><button class="btn btn-success">Edit <i class="fa fa-pencil-square-o"></i></button></a></td>
+								<td class=""><button class="btn btn-danger" data-href="<c:url  value="/deletetutor/${tutorValue.getId()}"/>" data-toggle="modal" data-target="#confirm-delete"> Delete
+								<i class="fa fa-trash-o"></i></button></td>
 							</tr>
 						</c:forEach>
 					</c:if>
@@ -116,10 +119,36 @@
 		</div>
 
 	</div>
+	<div id="confirm-delete" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure that you want to delete this tutor</p>
+                <p class="text-warning"><small>If you click "delete" your data will be lost permanently</small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
+                <button type="button" class="btn btn-danger btn-ok">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
 	<script type="text/javascript">
 	$(document).ready(function() {
 	    $('#listrooms').DataTable();
 	} );
+	$(document).ready(function() {
+	    $('#confirm-delete').on('show.bs.modal', function(e) {
+	            var deleteid = $(e.relatedTarget).data('href');
+	            $('.btn-ok').click(function() {
+	            	 window.location.assign(deleteid)
+	            });
+	    });
+	});
 	</script>
 </body>
 </html>

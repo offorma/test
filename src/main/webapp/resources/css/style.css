@@ -27,3 +27,9 @@
 .carousel .item .errordiv{
     margin: 0 auto; /* Align slide image horizontally center */
 }
+.title{
+    margin-left: ;
+    background-color: yellowgreen;
+    margin-top: -1.6%;
+    padding-left: 5%;
+}

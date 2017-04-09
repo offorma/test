@@ -67,26 +67,33 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<c:url value="/createevent"/>">Schedule Event</a></li>
-          <li><a href="<c:url value="/liststudent"/>">View Events</a></li>
+          <li><a href="<c:url value="/searchevent"/>">Search Events</a></li>
         </ul>
       </li>
     </ul>
   </div>
 </nav>
-
-
-
-
+<H1 class="title">Welcome! Please Login</H1>
 	<div class="container">
 		<div class="row landing">
 			<div class="col-md-6 col-md-offset-3">
 				<c:choose>
-				    <c:when test="${message.length()!=0}">
+				    <c:when test="${message.length()>0}">
 				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
 				    </c:when>
 			   </c:choose>
+			   <c:choose>
+				    <c:when test="${logoutmessage.length()>0}">
+				    		<div class='alert alert-success'><span class=''>${logoutmessage}</span> </div>
+				    </c:when>
+			   </c:choose>
+			   <c:choose>
+				    <c:when test="${accessmessage.length()>0}">
+				    		<div class='alert alert-danger'><span class=''>${accessmessage}</span> </div>
+				    </c:when>
+			   </c:choose>
 			
-				<form method="post" action="login">
+				<form method="post" action="<c:url value="/login"/>">
 					<div class="form-group">
 						<label for="Username">Username</label> <input
 							type="text" class="form-control" name="Username" id= "Username"></input>
