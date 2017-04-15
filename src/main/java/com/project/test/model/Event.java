@@ -1,6 +1,6 @@
 package com.project.test.model;
 
-import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.List;
 
@@ -40,11 +40,11 @@ public class Event {
 	private Module module;
 	@ManyToMany
 	@Column( nullable = false)
-	@LazyCollection(LazyCollectionOption.TRUE)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Tutor> tutor;
 	@ManyToMany
 	@Column( nullable = false)
-	@LazyCollection(LazyCollectionOption.TRUE)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<StudentGroup> studentGroup;
 	
 	public long getId() {
@@ -90,14 +90,14 @@ public class Event {
 	public List<Tutor> getTutor() {
 		return tutor;
 	}
-	public void setTutor(ArrayList<Tutor> tutor) {
-		this.tutor = tutor;
+	public void setTutor(List<Tutor> list) {
+		this.tutor = list;
 	}
 	public List<StudentGroup> getStudentGroup() {
 		return studentGroup;
 	}
-	public void setStudentGroup(ArrayList<StudentGroup> studentGroup) {
-		this.studentGroup = studentGroup;
+	public void setStudentGroup(List<StudentGroup> list) {
+		this.studentGroup = list;
 	}
 	
 	

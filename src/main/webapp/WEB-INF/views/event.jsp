@@ -9,14 +9,13 @@
 <title>Timetable Project</title>
 <link href="<c:url value = "/resources/css/bootstrap.min.css"/>"
 	rel="stylesheet" />
-<link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
+
 <link href="<c:url value = "/resources/font/css/font-awesome.min.css"/>"
 	rel="stylesheet" />
 <link href="<c:url value = "/resources/css/style.css"/>"
 	rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<SCRIPT src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" type="text/javascript"></SCRIPT>
 </head>
 <body>
 
@@ -77,78 +76,20 @@
             </ul>
   </div>
 </nav>
-<H1 class="title">Tutor Listings</H1>
+<H1 class="title">Manage Events</H1>
 	<div class="container">
 		<div class="row landing">
-			<div class="col-md-8 col-md-offset-2">
-			<c:choose>
-				    <c:when test="${message.length()>0}">
-				    		<div class='alert alert-danger'><span class=''>${message}</span> </div>
-				    </c:when>
-			   </c:choose>
-			   <c:choose>
-				    <c:when test='${messages.length()>0}'>
-				    		<div class='alert alert-success'><span class=''>${messages}</span> </div>
-				    </c:when>
-			   </c:choose>
-				<table id ="listrooms" class="table table-condensed table-striped">
-					<thead>
-						<tr>
-							<th class="">Staff Name</th>
-							<th class="">Department</th>
-							<th class=""></th>
-							<th class=""></th>
-							
-						</tr>
-					</thead>
-						<c:if test="${tutor.size() > 0}">
-						<c:forEach  items="${tutor}" var="tutorValue">
-							<tr>
-								<td class="">${tutorValue.getName()}</td>
-								<td class="">${tutorValue.getDepartment()}</td>
-
-								<td class=""><a href="<c:url  value="/edittutor/${tutorValue.getId()}"/>"><button class="btn btn-success">Edit <i class="fa fa-pencil-square-o"></i></button></a></td>
-								<td class=""><button class="btn btn-danger" data-href="<c:url  value="/deletetutor/${tutorValue.getId()}"/>" data-toggle="modal" data-target="#confirm-delete"> Delete
-								<i class="fa fa-trash-o"></i></button></td>
-							</tr>
-						</c:forEach>
-					</c:if>
-				</table>
+			<div class="col-md-4 col-md-offset-2">
+				<i class="fa fa-plus-square-o fabasic center-block img-respinsive"></i>
+				<a href="<c:url value="/createevent"/>" class ="landing-para center-block">Create Events</a>
 			</div>
-
+			<div class="col-md-4 ">
+				<i class="fa fa-list fabasic center-block img-respinsive"></i>
+				<a href="<c:url value="/searchevent"/>" class ="landing-para center-block ">View Schedules</a>
+			</div>
+			
 		</div>
 
 	</div>
-	<div id="confirm-delete" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Confirmation</h4>
-            </div>
-            <div class="modal-body">
-                <p>Are you sure that you want to delete this tutor</p>
-                <p class="text-warning"><small>If you click "delete" your data will be lost permanently</small></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
-                <button type="button" class="btn btn-danger btn-ok">Delete</button>
-            </div>
-        </div>
-    </div>
-</div>
-	<script type="text/javascript">
-	$(document).ready(function() {
-	    $('#listrooms').DataTable();
-	} );
-	$(document).ready(function() {
-	    $('#confirm-delete').on('show.bs.modal', function(e) {
-	            var deleteid = $(e.relatedTarget).data('href');
-	            $('.btn-ok').click(function() {
-	            	 window.location.assign(deleteid)
-	            });
-	    });
-	});
-	</script>
 </body>
 </html>

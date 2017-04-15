@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Login</title>
+<title>Timetable Project</title>
 <link href="<c:url value = "/resources/css/bootstrap.min.css"/>"
 	rel="stylesheet" />
 <link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
