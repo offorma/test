@@ -6,6 +6,9 @@
 	height:30%;
 	width:30%;
 }
+.mymargin{
+	margin-bottom: 10%;
+}
 .landing{
 	margin-top: 10%;
 }
@@ -32,4 +35,10 @@
     background-color: yellowgreen;
     margin-top: -1.6%;
     padding-left: 5%;
+}
+table.mytable tbody tr td,
+table.mytable thead tr th,
+table.mytable thead {
+  border-left: 1px solid blue;
+  border-right: 1px solid blue;
 }

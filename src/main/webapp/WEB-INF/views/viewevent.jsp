@@ -98,7 +98,7 @@
 	<div class="container">
 		<div class="row landing">
 			<div class="col-md-12 ">
-				<table id ="listrooms" class="table table-condensed table-striped">
+				<table id ="listrooms" class="table table-condensed table-striped mytable">
 						<thead>
 							<tr>
 								<th class="">Event Date</th>

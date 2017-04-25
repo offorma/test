@@ -86,7 +86,7 @@
 </nav>
 <h1 class ="title">Schedule Events</h1>
 	<div class="container">
-		<div class="row landing">
+		<div class="row landing mymargin">
 			<div class="col-md-4">
 				<c:if test="${clashStudent.size() > 0}">
 					<div class="row ">
@@ -230,7 +230,7 @@
 								        <c:set var="disClass" value=""></c:set>
 								    </c:otherwise>
 								</c:choose>
-							   	<div class="item ${disClass} center-block">
+							   	<div class="item ${disClass} center-block mymargin">
 							   	<div class="errordiv">
 							      <p>Event Date: "${eventValue.getDate()}"</p>
 							      <p>Event Start Time: "${eventValue.getStartTime()}"</p>
@@ -256,7 +256,7 @@
 		</div>
 		
 	
-		<div class="col-md-4 col-md-offset-1">
+		<div class="col-md-7 pull-right ">
 			<c:choose>
 				    <c:when test="${message.length()>0}">
 				    		<div class='alert alert-success'><span class=''>${message}</span> </div>

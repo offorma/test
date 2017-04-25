@@ -78,7 +78,7 @@
 </nav>
 <H1 class="title">Create Module</H1>
 	<div class="container">
-		<div class="row landing">
+		<div class="row landing mymargin">
 			<div class="col-md-6 col-md-offset-3">
 			<c:choose>
 				    <c:when test="${message.length()>0}">

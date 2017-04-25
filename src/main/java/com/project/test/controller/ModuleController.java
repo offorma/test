@@ -21,11 +21,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.test.model.Module;
 import com.project.test.model.User;
-import com.project.test.repositories.ModuleRepositoryImpl;
+import com.project.test.service.ModuleServiceImpl;
 @Controller
 public class ModuleController {
 	@Autowired
-	ModuleRepositoryImpl moduleRepo;
+	ModuleServiceImpl moduleRepo;
 	@RequestMapping(value="/listmodule")
 	public ModelAndView getRooms(HttpServletResponse response,HttpSession session, @ModelAttribute("message") String message
             ) throws IOException{

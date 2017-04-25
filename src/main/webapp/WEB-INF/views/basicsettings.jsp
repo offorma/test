@@ -78,7 +78,7 @@
 </nav>
 <H1 class="title">Basic Setting</H1>
 	<div class="container">
-		<div class="row landing">
+		<div class="row landing mymargin">
 			<div class="col-md-3">
 				<i class="fa fa-university fabasic center-block img-respinsive"></i>
 				<a href="<c:url value="/room"/>" class ="landing-para center-block">Manage Rooms</a>

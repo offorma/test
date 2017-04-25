@@ -20,13 +20,13 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.test.model.User;
-import com.project.test.repositories.UserRepositoryImpl;
+import com.project.test.service.UserServiceImpl;
 
 @Controller
 
 public class LoginController {
 	@Autowired
-	UserRepositoryImpl userRepo;
+	UserServiceImpl userRepo;
 	
 	@RequestMapping(value="/")
 	public String test(HttpServletResponse response, @ModelAttribute("message") String message,
